@@ -1,0 +1,22 @@
+{% extends 'diseaseprediction/base.html' %}
+{% block content %}
+
+<div class="formbody "> 
+    <br>
+    {% if message == "yes" %}
+    <div class="alert alert-success text-center">
+      <h3>Hey! You are out of harm's way. <strong>You are healthy!</strong></h3>
+    </div>
+    {% elif message == "no" %}
+    <div class="alert alert-danger text-center">
+      <h3>Oh! Looks like you are having a heart disease.<strong>Please see a Doctor.</strong></h3>
+    </div>
+    {% endif %}
+    
+    <div class="col-md-12 text-center">
+    <a href="/home/" type="button" class="btn btn-dark">Go Home</a>
+      <a href="/predictions/" type="button" class="btn btn-primary">Check your records</a>
+    </div>
+</div>
+
+{% endblock content %}

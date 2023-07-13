@@ -1,0 +1,158 @@
+{% extends 'diseaseprediction/base.html' %}
+{% block content %}
+<br><br>
+
+<main class="login-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Add New Prediction</div>
+                  <div class="card-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                        <div class="form-row">
+                          <div class="form-group col-md-5">
+                            <label for="inputEmail4">Age</label>
+                            <input type="number" name="age" class="form-control" placeholder="Enter age">
+                            </div>
+                          <div class="col-md-2"></div>
+                          <div class="form-group col-md-5">
+                            <label for="inputPassword4">Gender</label>
+                            <select name="sex" class="form-select">
+                                <option>Select gender</option>
+                                <option value="0">0-Male</option>
+                                <option value="1">1-Female</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                              <label for="cp">Chest pain type</label>
+                              <select name="cp" class="form-select">
+                                <option>Select cp type</option>
+                                <option value="1">1-Typical angina</option>
+                                <option value="2">2-Atypical angina</option>
+                                <option value="3">3-Non-anginal pain</option>
+                                <option value="4">4-Asymptomatic</option>
+                              </select>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-5">
+                              <label for="trestbps">trestbps</label>
+                              
+                              <div class="input-group mb-3">
+                                <input type="number" name="trestbps" class="form-control" aria-label="resting blood pressure">
+                                <span class="input-group-text">mm/Hg</span>
+                                
+                              </div>
+                              <small id="fbsHelp" class="form-text text-muted">resting blood pressure</small>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="inputZip">Cholesterol</label>
+                                <input type="number" name="chol" class="form-control" placeholder="Enter chol">
+                                <small id="fbsHelp" class="form-text text-muted">serum cholesterol</small>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-5">
+                              <label for="fbs">fbs</label>
+                              <select name="fbs" class="form-select">
+                                <option>Select fbs</option>
+                                <option value="1">1-True</option>
+                                <option value="0">0-False</option>
+                              </select>
+                              <small id="fbsHelp" class="form-text text-muted">fbs-fasting blood pressure</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="restecg">restecg</label>
+                                <select name="restecg" class="form-select">
+                                    <option>Select restecg</option>
+                                    <option value="0">0-Normal</option>
+                                    <option value="1">1-having ST-T</option>
+                                    <option value="2">2-Hypertrophy</option>
+                                  </select> 
+                                  <small id="fbsHelp" class="form-text text-muted">restin electrocardiographic results</small>
+                              </div>
+                              <div class="col-md-2"></div>
+                            <div class="form-group col-md-5">
+                                <label for="thalach">thalach</label>
+                                <input type="text" name="thalach" class="form-control" id="inputZip">
+                                <small id="fbsHelp" class="form-text text-muted">Maximum heart rate achieved</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                              <label for="fbs">exang</label>
+                              <select name="exang" class="form-select">
+                                <option>Select exang</option>
+                                <option value="1">1-True</option>
+                                <option value="0">0-False</option>
+                              </select>
+                              <small id="fbsHelp" class="form-text text-muted">Exercise induced angina</small>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-5">
+                              <label for="restecg">oldpeak</label>
+                              <input type="text" name="oldpeak" class="form-control">
+                              <small class="form-text text-muted">ST depression induced by exercise relative to rest</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label>slope</label>
+                                <select name="slope" class="form-select">
+                                    <option>Select slope</option>
+                                    <option value="1">1-upsloping</option>
+                                    <option value="2">2-flat</option>
+                                    <option value="3">3-downsloping</option>
+                                  </select>
+                                  <small class="form-text text-muted">The slope of the peak exercise ST segment</small>
+                            </div>
+                            <div class="col-md-2"></div>
+                            <div class="form-group col-md-5">
+                                <label for="restecg">ca</label>
+                                <input type="number" name="ca" class="form-control">
+                              </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="thal">thal</label>
+                                <select name="thal" class="form-select">
+                                    <option>Select thal</option>
+                                    <option value="1">1-normal</option>
+                                    <option value="2">2-fixed defect</option>
+                                    <option value="3">3-reversable defect</option>
+                                  </select>
+                                  <small class="form-text text-muted">Thalassemia</small>
+                            </div>
+                            <div class="form-group col-md-2"></div>
+                            <div class="form-group col-md-5"></div>
+                        </div>
+                        
+                      </fieldset>
+                      
+                      <div class="float-right">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                        <a href="/predictions/" class="btn btn-lg btn-secondary">cancel</a>
+                        <br>
+                    </div>
+                    
+                    </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+</main>
+
+
+  
+  
+{% endblock content%}

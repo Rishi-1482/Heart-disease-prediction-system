@@ -1,0 +1,82 @@
+{% extends 'diseaseprediction/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/predictions.css' %}">
+<br><br>
+<div class="row">
+    <div class="col-lg-6"><h4>Record history</h4></div>
+    <div class="col-lg-6">
+        <a href="/makeprediction/" type="button" class="btn btn-success float-right">+ Make Prediction</a>
+    </div>
+    <br><br>
+</div>
+
+<div class="row">
+    {% if plist_count > 0 %}
+    <div class="col-lg-12">
+    <table class="table table-hover bg-light table-striped">
+        <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Chest pain type</th>
+            <th scope="col">trestbps</th>
+            <th scope="col">chol</th>
+            <th scope="col">fbs</th>
+            <th scope="col">restecg</th>
+            <th scope="col">thalach</th>
+            <th scope="col">exang</th>
+            <th scope="col">oldpeak</th>
+            <th scope="col">slope</th>
+            <th scope="col">ca</th>
+            <th scope="col">thal</th>
+            <th scope="col">Created on</th>
+            <th scope="col">Result</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        
+        {% for predict in plist %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{predict.age}}yrs</td>
+            <td>{% if predict.sex == 0 %}
+                Male
+                {% else %}
+                Female  
+                {% endif %}</td>
+            <td>{{predict.cp}}</td>
+            <td>{{predict.trestbps}}</td>
+            <td>{{predict.chol}}</td>
+            <td>{{predict.fbs}}</td>
+            <td>{{predict.restecg}}</td>
+            <td>{{predict.thalach}}</td>
+            <td>{{predict.exang}}</td>
+            <td>{{predict.oldpeak}}</td>
+            <td>{{predict.slope}}</td>
+            <td>{{predict.ca}}</td>
+            <td>{{predict.thal}}</td>
+            <td>{{predict.created_at}}</td>
+            <td>{% if predict.result == 0 %}
+                <span class="badge bg-success">+ve</span>
+                {% else %}
+                <span class="badge bg-danger">-ve</span>  
+                {% endif %}</td>
+            
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+    {% else %}
+    <div class="col-lg-12 text-center"><br><h4>You don't have any records</h4></div>
+    {% endif %}
+</div>
+
+
+
+{% endblock content%}

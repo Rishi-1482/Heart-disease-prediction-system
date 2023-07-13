@@ -1,0 +1,9 @@
+body {
+    background: url('/static/images/home.jpg') no-repeat center bottom;
+    position: relative;
+    z-index: 1;
+    height: 750px;
+}
+.hometext{
+    font-weight: 600 !important;
+}

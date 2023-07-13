@@ -1,0 +1,16 @@
+body{
+    background-color: #92ccd3;
+    background: url('/static/images/contactus2.png') no-repeat center bottom;
+    position: relative;
+    z-index: 1;
+    height: 780px;
+    color: white;
+}
+.card{
+    border-radius: 1.25rem;
+    background-color: #2c3d4f;
+    color: white;
+}
+pre{
+    color: white;
+}
